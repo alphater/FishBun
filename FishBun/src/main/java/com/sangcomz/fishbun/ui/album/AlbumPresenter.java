@@ -23,7 +23,6 @@ import rx.schedulers.Schedulers;
  */
 public class AlbumPresenter implements AlbumAction {
     private AlbumView view;
-
     private ContentResolver contentResolver;
 
     private Observable<ArrayList<Album>> observable;
