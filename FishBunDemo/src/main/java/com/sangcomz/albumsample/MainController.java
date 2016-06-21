@@ -3,7 +3,8 @@ package com.sangcomz.albumsample;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
 
 /**
  * Created by sangc on 2015-11-06.
@@ -18,6 +19,6 @@ public class MainController {
     }
 
     public void setImgMain(String path) {
-        Glide.with(context).load(path).fitCenter().into(imgMain);
+        Picasso.with(context).load(path).fit().centerCrop().into(imgMain);
     }
 }

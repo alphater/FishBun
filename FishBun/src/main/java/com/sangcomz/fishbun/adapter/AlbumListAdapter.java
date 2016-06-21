@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.sangcomz.fishbun.R;
 import com.sangcomz.fishbun.bean.Album;
 import com.sangcomz.fishbun.define.Define;
 import com.sangcomz.fishbun.ui.picker.PickerActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,15 +74,14 @@ public class AlbumListAdapter
 
         if (thumbList != null) {
             if (thumbList.size() > position) {
-                Glide
+                Picasso
                         .with(holder.imgAlbum.getContext())
                         .load(thumPath)
-                        .asBitmap()
-                        .override(Define.ALBUM_THUMNAIL_SIZE, Define.ALBUM_THUMNAIL_SIZE)
+                        .resize(Define.ALBUM_THUMNAIL_SIZE, Define.ALBUM_THUMNAIL_SIZE)
                         .placeholder(R.mipmap.loading_img)
                         .into(holder.imgAlbum);
             } else {
-                Glide.with(holder.imgAlbum.getContext()).load(R.mipmap.loading_img).into(holder.imgAlbum);
+                Picasso.with(holder.imgAlbum.getContext()).load(R.mipmap.loading_img).into(holder.imgAlbum);
             }
         }
         holder.areaAlbum.setTag(albumlist.get(position));
