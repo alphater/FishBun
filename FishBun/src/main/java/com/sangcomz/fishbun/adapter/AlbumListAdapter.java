@@ -81,7 +81,10 @@ public class AlbumListAdapter
                         .placeholder(R.mipmap.loading_img)
                         .into(holder.imgAlbum);
             } else {
-                Picasso.with(holder.imgAlbum.getContext()).load(R.mipmap.loading_img).into(holder.imgAlbum);
+                Picasso
+                        .with(holder.imgAlbum.getContext())
+                        .load(R.mipmap.loading_img)
+                        .into(holder.imgAlbum);
             }
         }
         holder.areaAlbum.setTag(albumlist.get(position));

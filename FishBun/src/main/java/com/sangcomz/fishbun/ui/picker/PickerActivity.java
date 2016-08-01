@@ -213,11 +213,12 @@ public class PickerActivity extends AppCompatActivity {
                         imageBeans[++position] = new ImageBean(-1, path);
                     } while (c.moveToNext());
                 }
-                c.close();
             } catch (Exception e) {
                 if (!c.isClosed()) c.close();
             }
         }
+        if (c != null && !c.isClosed())
+            c.close();
         return imageBeans;
     }
 

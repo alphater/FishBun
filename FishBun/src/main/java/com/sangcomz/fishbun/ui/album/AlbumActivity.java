@@ -228,9 +228,9 @@ public class AlbumActivity extends AppCompatActivity {
                         albumlist.get(0).counter = totalCounter;
                     }
                 }
-                imagecursor.close();
             }
-
+            if (imagecursor != null && !imagecursor.isClosed())
+                imagecursor.close();
             if (totalCounter == 0) {
                 albumlist.clear();
                 return false;
@@ -324,6 +324,8 @@ public class AlbumActivity extends AppCompatActivity {
             }
             c.close();
         }
+        if (c != null && !c.isClosed())
+            c.close();
 
 
         return path;

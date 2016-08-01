@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,7 +35,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final String imagePath = imagePaths.get(position);
-        Picasso.with(context).load(imagePath).centerCrop().into(holder.imageView);
+        Picasso
+                .with(context)
+                .load(imagePath)
+                .into(holder.imageView);
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
